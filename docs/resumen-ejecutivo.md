@@ -3,8 +3,10 @@
 ## Estado
 
 - Fecha: 2026-06-05
-- Estado: Definicion inicial en curso
+- Estado: Base tecnica y contrato inicial decididos
 - Referencia principal: docs/inicio-proyecto.md
+- Decision tecnica: docs/estrategia-tecnica-rest-fortran.md
+- Contrato API: docs/contrato-endpoint-procesos-estados.md
 
 ## Resumen
 
@@ -43,14 +45,12 @@ evolucionar en iteraciones posteriores.
 
 ## Pendientes criticos
 
-- Decidir la estrategia tecnica REST en Fortran.
-- Cerrar el contrato del endpoint inicial.
 - Definir el modelo de datos estatico de procesos y estados.
 - Preparar esqueleto, build y pruebas.
 
 ## Proximos pasos
 
-1. Resolver la estrategia tecnica de API REST en Fortran.
-2. Definir el contrato del endpoint y la respuesta JSON.
-3. Montar el esqueleto del proyecto con compilacion y pruebas.
-4. Implementar el endpoint GET y documentar su uso.
+1. Montar el esqueleto del proyecto con compilacion y pruebas.
+2. Definir el modelo de datos estatico de procesos y estados.
+3. Implementar el endpoint GET.
+4. Documentar compilacion, validacion local y uso de la API.

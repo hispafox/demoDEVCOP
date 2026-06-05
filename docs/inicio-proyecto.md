@@ -2,10 +2,11 @@
 
 ## Estado del documento
 
-- Version: 0.5
+- Version: 0.7
 - Fecha: 2026-06-05
 - Estado: Borrador inicial revisable
 - Referencia: Issue #1 "Crear documento de inicio del proyecto"
+- Decision tecnica relacionada: docs/estrategia-tecnica-rest-fortran.md
 
 ## 1. Contexto
 
@@ -134,6 +135,14 @@ Criterios de exito iniciales propuestos:
 - Confirmacion del conjunto inicial de procesos y estados.
 - Seleccion de build tool y estrategia de pruebas automatizadas.
 
+Estado actual de dependencias:
+
+- La estrategia tecnica REST del MVP queda fijada en
+  docs/estrategia-tecnica-rest-fortran.md.
+- El contrato del endpoint inicial queda fijado en
+  docs/contrato-endpoint-procesos-estados.md.
+- Quedan pendientes el modelo de datos y el esqueleto ejecutable.
+
 Restricciones iniciales:
 
 - Restriccion tecnica: la implementacion debe realizarse en Fortran.
@@ -158,9 +167,7 @@ Integraciones conocidas:
 
 Queda por definir:
 
-- Contrato exacto del endpoint o endpoints iniciales.
 - Modelo de datos de proceso y estado.
-- Estrategia tecnica para exponer REST en Fortran.
 - Estructura del proyecto, compilacion y pruebas.
 - Criterios de exito del primer entregable.
 
@@ -173,10 +180,10 @@ Desglose trazado en GitHub:
 - Issue #6: Definir hitos, calendario y responsables.
 - Issue #7: Preparar version ejecutiva del documento de inicio.
 
-Backlog tecnico inicial para empezar:
+Backlog tecnico inicial trazado:
 
-- Issue #8: Definir estrategia tecnica REST en Fortran.
-- Issue #9: Definir contrato del endpoint de procesos y estados.
+- Issue #8: Definir estrategia tecnica REST en Fortran. Estado: resuelta.
+- Issue #9: Definir contrato del endpoint de procesos y estados. Estado: resuelta.
 - Issue #10: Crear esqueleto del proyecto Fortran con build y tests.
 - Issue #11: Definir modelo de datos estatico de procesos y estados.
 - Issue #12: Implementar endpoint GET de procesos y estados.
@@ -185,9 +192,9 @@ Backlog tecnico inicial para empezar:
 ## 10. Proximos pasos
 
 1. Validar el objetivo y contexto del proyecto.
-2. Resolver Issue #8 para fijar la base tecnica en Fortran.
-3. Resolver Issue #9 para cerrar el contrato del endpoint.
-4. Ejecutar Issues #10, #11, #12 y #13 como MVP tecnico inicial.
+2. Ejecutar Issue #10 para crear el esqueleto del proyecto con build y tests.
+3. Ejecutar Issues #11 y #12 para materializar el MVP tecnico inicial.
+4. Ejecutar Issue #13 para documentar compilacion, validacion local y uso.
 
 ## 11. Criterios de aceptacion cubiertos
 
@@ -204,3 +211,5 @@ Este documento cumple la base pedida por la issue:
 - 0.3 - Objetivo funcional concretado: API REST de procesos y estados en Fortran.
 - 0.4 - Backlog tecnico inicial publicado para arrancar el MVP.
 - 0.5 - Problema, MVP, restricciones e integraciones documentados.
+- 0.6 - Estrategia tecnica REST en Fortran documentada para el MVP.
+- 0.7 - Contrato inicial del endpoint de procesos y estados fijado.
