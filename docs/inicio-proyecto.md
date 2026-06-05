@@ -2,7 +2,7 @@
 
 ## Estado del documento
 
-- Version: 0.4
+- Version: 0.5
 - Fecha: 2026-06-05
 - Estado: Borrador inicial revisable
 - Referencia: Issue #1 "Crear documento de inicio del proyecto"
@@ -18,6 +18,23 @@ El objetivo funcional ya definido para el arranque es construir una aplicacion
 que publique una API REST con una lista de procesos y sus estados. En esta
 primera iteracion, la lista sera estatica. La implementacion debe realizarse en
 Fortran.
+
+Problema a resolver:
+
+Actualmente no existe una API REST base que publique una lista consultable de
+procesos y estados para servir como punto de integracion o de validacion
+temprana. El proyecto necesita un primer entregable simple que permita definir
+contrato, formato de datos y base tecnica sin depender todavia de persistencia,
+autenticacion ni fuentes externas.
+
+Contexto operativo inicial:
+
+- La API se concibe como servicio de consulta.
+- El consumidor inicial sera cualquier cliente HTTP que necesite leer el estado
+  de procesos.
+- La lista de procesos sera estatica durante el MVP para reducir complejidad.
+- El objetivo del primer tramo es validar la base tecnica y el contrato de
+  intercambio.
 
 ## 2. Objetivo
 
@@ -49,6 +66,20 @@ Fuera de alcance en esta version:
 - Integraciones externas.
 - Despliegue productivo.
 
+Bloques funcionales iniciales:
+
+- Publicacion de un endpoint HTTP de lectura.
+- Exposicion de una lista de procesos y estados.
+- Serializacion de la respuesta a JSON.
+- Base de build, ejecucion y pruebas para evolucion posterior.
+
+Definicion del MVP:
+
+- Un endpoint GET.
+- Respuesta con lista estatica de procesos y estados.
+- Contrato simple y estable para validacion temprana.
+- Sin escritura, sin persistencia y sin autenticacion.
+
 ## 4. Entregables de esta iteracion
 
 - Documento inicial del proyecto en el repositorio.
@@ -64,6 +95,18 @@ Pendiente de completar:
 - Responsable tecnico.
 - Equipo participante.
 - Interlocutores de validacion.
+
+Usuarios o consumidores afectados en esta fase:
+
+- Consumidor tecnico que necesite consultar el estado de procesos por HTTP.
+- Responsable tecnico que valide el contrato de la API.
+- Patrocinador o interlocutor funcional pendiente de identificar.
+
+Criterios de exito iniciales propuestos:
+
+- La API responde correctamente al endpoint de lectura acordado.
+- La respuesta devuelve una lista estatica coherente con el contrato JSON.
+- El proyecto puede compilarse y validarse localmente con un flujo definido.
 
 ## 6. Supuestos iniciales
 
@@ -90,6 +133,26 @@ Pendiente de completar:
 - Definicion del contrato JSON de la respuesta.
 - Confirmacion del conjunto inicial de procesos y estados.
 - Seleccion de build tool y estrategia de pruebas automatizadas.
+
+Restricciones iniciales:
+
+- Restriccion tecnica: la implementacion debe realizarse en Fortran.
+- Restriccion de alcance: el primer entregable es solo de lectura.
+- Restriccion de tiempo y complejidad: los datos seran estaticos en el MVP.
+- Restriccion operativa: no se abordara despliegue productivo en esta fase.
+
+Restricciones no tecnicas conocidas:
+
+- No se han identificado por ahora requisitos legales o normativos especificos,
+  pero queda pendiente su confirmacion.
+- No se han definido aun SLA, requisitos de soporte ni condiciones operativas de
+  produccion.
+
+Integraciones conocidas:
+
+- No hay integraciones obligatorias en el MVP inicial.
+- El unico contrato externo previsto en esta fase es la interfaz HTTP/JSON que
+  consumiran clientes de prueba o futuros consumidores.
 
 ## 9. Pendientes abiertos
 
@@ -140,3 +203,4 @@ Este documento cumple la base pedida por la issue:
 - 0.2 - Desglose de pendientes trazado en issues de GitHub.
 - 0.3 - Objetivo funcional concretado: API REST de procesos y estados en Fortran.
 - 0.4 - Backlog tecnico inicial publicado para arrancar el MVP.
+- 0.5 - Problema, MVP, restricciones e integraciones documentados.
